@@ -1,22 +1,12 @@
-# Papilio Pins
-
-It is the intent of this project to help developers with the pin assignments on the Paplio boards offered by Gadget Factory.
-
-## Diagrams
-
-Currently, two diagrams have been defined. One for the Papilio One and one for a prototype board called the Papilio RAM. Note that the P/RAM board will most likely change names in the future. The diagrams are useful when creating a UCF (constraints) file for a Papilio HDL design.
-
-The Papilios offer a collection of headers divided into wing slots. Each pin in a wing slot has a wing letter and a pin index. Each wing pin is connected to a pin on the board's FPGA. The diagrams show the mapping of each wing pin to its corresponding FPGA pin, making it easy to determine which FPGA pins to use in your constraints file.
-
-## Conversion Tool
+# Pin Converter
 
 When creating an HDL design, eventually you may want to relocate your wing pin assignment. For instance, you may be moving your design to another type of board or to another location on the same board. The pin_converter project provides a tool to help with this.
 
-### Requirements
+## Requirements
 
 The pin_converter tool is a command-line Java application. This means you need to have Java installed on your machine and in your command-line path.
 
-### Running
+## Running
 
 I'll add some bat and shell scripts at some point, but in the meantime, you'll need to use something like the following from the command-line
 
@@ -24,7 +14,7 @@ I'll add some bat and shell scripts at some point, but in the meantime, you'll n
 
 In this example, this is saying that the source file to process is using pin assignments for a Papilio One, the output should use pin assignments for a Papilio RAM, the source file is P1.ucf and the output should be piped to PRAM.ucf.
 
-### Examples
+## Examples
 
 Show a list of switches with brief descriptions. Most switches have short and long versions. The usage information will show all versions of a switch
 
@@ -76,4 +66,4 @@ Generate Papilio One UCF file, placing multiple B/LED wings
 Generate Papilio One UCF file, placing B/LED and PS/2 wings (2 variations)
 
     pinconv --destinationBoard "Papilio One" --placeWing "B/LED->A;PS/2->BH" --generate CLK,A,BH
-    pinconv -dst "Papilio One" -pw "B/LED->A" -pw PS/2->BH -gn CLK,A,BH
+    pinconv -dst "Papilio One" -pw "B/LED->A" -pw PS/2->BH -g CLK,A,BH
