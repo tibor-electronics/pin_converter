@@ -1,0 +1,16 @@
+# Crystal Clock - use 32MHz onboard oscillator
+NET "clock" LOC = "C8" | IOSTANDARD = LVCMOS25 | PERIOD = 31.25ns;
+
+# Wing A
+NET "A" LOC = "N1" | IOSTANDARD = LVTTL | PULLUP;
+NET "B" LOC = "P1" | IOSTANDARD = LVTTL | PULLUP;
+NET "PB" LOC = "P6" | IOSTANDARD = LVTTL | PULLUP;
+
+NET "segments<0>" LOC = "T6";
+NET "segments<1>" LOC = "T7";
+NET "segments<2>" LOC = "N11";
+NET "segments<3>" LOC = "T8";
+NET "segments<4>" LOC = "P13";
+NET "segments<5>" LOC = "T9";
+NET "segments<6>" LOC = "P12";
+NET "dp" LOC = "R13";

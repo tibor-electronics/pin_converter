@@ -1,0 +1,1 @@
+The list boards switch is used to show all boards and wings that have been loaded at the point the switch is encountered. It is possible to limit the list to "boards" or "wings" only, using those keywords as arguments to the switch. The default "all" value is assumed when no argument is specified and this shows all boards and wings.

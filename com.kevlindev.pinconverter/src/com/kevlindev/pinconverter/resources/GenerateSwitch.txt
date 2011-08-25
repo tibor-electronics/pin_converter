@@ -1,0 +1,7 @@
+The generate switch is used to generate new UCF files. A destination board has to be selected prior to the generate switch option. If one or more wings are being placed on the destination board, those must appear before this option. Likewise, other options that affect formatting of the UCF must precede this option.
+
+By default, all pins for the destination board are emitted; however, it is possible to limit the output to a specified list of pins. Some examples follow:
+
+To emit the entire A wing, use '--generate A'
+To emit the AH wing, use '--generate AH'
+To emit the A and B wings, use '--generate A,B'

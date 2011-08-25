@@ -1,0 +1,46 @@
+Program
+	:	BoardDefinitions
+	;
+
+BoardDefinitions
+	: Boards
+	;
+
+Boards
+	: Boards Board
+	| Board
+	;
+
+Board
+	: Names LCURLY Buses RCURLY
+	| Names COLON Name LCURLY Buses RCURLY;
+	;
+
+Buses
+	: Buses Bus
+	| Bus
+	;
+
+Bus
+	: Name COLON FpgaPins
+	;
+
+FpgaPins
+	: FpgaPins COMMA FpgaPin
+	| FpgaPin
+	;
+
+FpgaPin
+	: Name
+	| Name LCURLY Names RCURLY
+	;
+
+Names
+	: Names COMMA Name
+	| Name
+	;
+
+Name
+	: IDENTIFIER
+	| STRING
+	;

@@ -1,0 +1,1 @@
+Use the output file switch to specify the file where all output show be emitted. Normally, output is sent to stdout where the command-line can be used to redirect the output to a file. However, in an automated build situation, it may be necessary to emit directly to a file. Use the output file switch for this situation.

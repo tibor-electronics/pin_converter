@@ -1,0 +1,1 @@
+The spaces around equals switch is used to add a single space before and after the '=' in assignments when generating a UCF file. This applies to CONFIG, NET, and additional constraints. The default behavior is to emit assignments without spaces. If spaces are desired, use the spaces around equals switch.

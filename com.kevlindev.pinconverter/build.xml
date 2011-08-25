@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="com.kevlindev.pinconverter">
+
+	<property environment="env" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.6" />
+	<property name="source" value="1.6" />
+
+	<path id="com.kevlindev.pinconverter.classpath">
+		<pathelement location="bin" />
+	</path>
+
+	<target name="init">
+		<mkdir dir="bin" />
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="src">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="clean">
+		<delete dir="bin" />
+	</target>
+
+	<target depends="clean" name="cleanall" />
+
+	<target depends="docs,jar" name="buildall"/>
+
+	<target depends="init" name="build">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+			<src path="src" />
+			<classpath refid="com.kevlindev.pinconverter.classpath" />
+		</javac>
+	</target>
+
+	<target depends="build" name="jar">
+		<mkdir dir="build" />
+		<tstamp>
+			<format property="build.time" pattern="yyyyMMddhhmmss" />
+		</tstamp>
+		<jar destfile="build/pin_converter_0.1.0.${build.time}.jar" basedir="bin">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Implementation-Vendor" value="KevLinDev" />
+				<attribute name="Implementation-Title" value="Pin Converter" />
+				<attribute name="Implementation-Version" value="0.1.0.${build.time}" />
+				<attribute name="Main-Class" value="com.kevlindev.pinconverter.PinConverter" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="docs">
+		<mkdir dir="build/docs" />
+		<javadoc sourcepath="src" destdir="build/docs/api" overview="src/overview.html" author="true" version="true" use="true" windowtitle="PinConverter API">
+			<doctitle><![CDATA[<h1>PinConverter</h1>]]></doctitle>
+			<bottom><![CDATA[<i>Copyright &#169; 2011 Kevin Lindsey. All Rights Reserved.</i>]]></bottom>
+			<group title="Switches" packages="com.kevlindev.pinconverter.switches" />
+			<group title="Commands" packages="com.kevlindev.pinconverter.commands" />
+			<group title="Model" packages="com.kevlindev.pinconverter.model" />
+		</javadoc>
+	</target>
+
+</project>

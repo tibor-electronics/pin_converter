@@ -1,0 +1,7 @@
+The place wing switch is used to place a wing onto a board when generating a UCF file.
+
+Some examples of the syntax follow. Note the use of double-quotes. These are necessary to prevent '>' from redirecting output. Note that a semicolon must be used between different wing placements when specifying them in a single place wing switch.
+
+To place a Button/LED Wing in AL, use '--placeWing "B/LED->AL"'
+To place multiple B/LED Wings in A, use '--placeWing "B/LED->AL,AH"'
+To place a B/LED Wing and a PS2 Wing in A, use '--placeWing "B/LED->AL;PS2->AH"'

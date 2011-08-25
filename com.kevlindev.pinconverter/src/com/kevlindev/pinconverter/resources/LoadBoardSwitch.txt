@@ -1,0 +1,1 @@
+The load board switch is used to load a board definition file into the board registry. This is used to load custom boards that are not part of the default board list included with pin_converter.

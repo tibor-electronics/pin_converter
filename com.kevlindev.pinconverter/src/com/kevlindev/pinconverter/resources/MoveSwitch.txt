@@ -1,0 +1,8 @@
+The move switch is used to move pin assignments to other areas of a board. When used in conjunction with the transform switch, this switch can be used to move pin assignment to a new location on the destination board.
+
+Some examples of the syntax follow. Note the use of double-quotes. These are necessary to prevent '>' from redirecting output.
+
+To move wing A pins to wing B, use '--move "A->B"'
+To move AH to AL, use '--move "AH->AL"'
+To reverse wing A, use '--move "A[0:15]->A[15:0]"'
+To move AH to AL and BL to BH, use '--move "AL->AH,BH->BL'"

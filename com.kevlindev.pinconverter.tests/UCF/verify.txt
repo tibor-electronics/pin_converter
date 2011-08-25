@@ -1,0 +1,1 @@
+All pins in file 'UCF/p1.ucf' are valid for the p1 board

@@ -1,0 +1,1 @@
+The transform switch causes an input file to be treated as a source board UCF file which is then mapped to a destination board and then emitted to a file or stdout.

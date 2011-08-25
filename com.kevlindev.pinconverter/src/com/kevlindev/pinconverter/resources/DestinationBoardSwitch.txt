@@ -1,0 +1,1 @@
+The destination board switch specifies the name of the board that is to be the target of a given operation. Typically, the destination needs to be specified when transforming a UCF file for one board type to another type. This switch is also used to specify the type of board to use when generating a new UCF file.

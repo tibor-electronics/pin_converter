@@ -1,0 +1,1 @@
+The input file is used to specify which file to process when transforming a UCF file. Operations include, transforming from one board type to another and moving assignments from one range of pins to another.

@@ -1,0 +1,48 @@
+#NET JOYSTICK_GND	LOC = "P18"	| IOSTANDARD = LVTTL;#													# GND 		pin 8 of DB9 Joystick B connector
+#NET I_BUTTON(3)	LOC = "P23"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; 	# right		pin 4 of DB9 Joystick B connector
+##NET Joystick_9	LOC = "P26"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; 	# ?			pin 9 of DB9 Joystick B connector
+##NET I_BUTTON(4)	LOC = "P33"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; 	# ?			pin 5 of DB9 Joystick B connector
+#NET LED(3)			LOC = "P35"	| IOSTANDARD = LVTTL;#
+#NET LED(2)			LOC = "P40"	| IOSTANDARD = LVTTL;#
+#NET LED(1)			LOC = "P53"	| IOSTANDARD = LVTTL;#
+#NET LED(0)			LOC = "P57"	| IOSTANDARD = LVTTL;#
+
+NET I_RESET			LOC = "P67"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLDOWN; # reset
+#NET PS2DATB		LOC = "P70"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; #PS/2 B
+#NET PS2CLKB		LOC = "P79"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; #PS/2 B
+NET O_AUDIO_L		LOC = "P84"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST; #
+NET O_AUDIO_R		LOC = "P86"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST; #
+
+NET O_VIDEO_B(0)	LOC = "P85"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST; 
+NET O_VIDEO_B(1)	LOC = "P83"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST; 
+NET O_VIDEO_B(2)	LOC = "P78"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST; 
+NET O_VIDEO_B(3)	LOC = "P71"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST;
+NET O_VIDEO_G(0)	LOC = "P68"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST; 
+NET O_VIDEO_G(1)	LOC = "P66"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST; 
+NET O_VIDEO_G(2)	LOC = "P63"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST; 
+NET O_VIDEO_G(3)	LOC = "P61"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST;
+NET I_SW(0)			LOC = "P58"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST;				# start 1	LEFT button
+#NET I_SW(2)		LOC = "P54"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST;  			# unused		UP button
+NET I_SW(1)			LOC = "P41"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST;  			# credit		DOWN button
+NET I_SW(3)			LOC = "P36"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST;  			# start 2	RIGHT button
+#NET I_BUTTON(0)	LOC = "P34"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; 	# up			pin 1 of DB9 Joystick B connector
+#NET I_SW(0)		LOC = "P32"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; 	# fire/cred	pin 6 of DB9 Joystick B connector
+#NET I_BUTTON(1)	LOC = "P25"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; 	# down		pin 2 of DB9 Joystick B connector
+#NET I_BUTTON(2)	LOC = "P22"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; 	# left		pin 3 of DB9 Joystick B connector
+
+#NET I_BUTTON(4)	LOC = "P17"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; 	# ?			pin 5 of DB9 Joystick A connector
+#NET Joystick_9		LOC = "P16"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; 	# ?			pin 9 of DB9 Joystick A connector
+NET I_BUTTON(3)		LOC = "P15"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; 	# right		pin 4 of DB9 Joystick A connector
+NET JOYSTICK_GND	LOC = "P12"	| IOSTANDARD = LVTTL;# 												# GND 		pin 8 of DB9 Joystick A connector
+NET I_BUTTON(2)		LOC = "P11"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; 	# left		pin 3 of DB9 Joystick A connector
+NET I_BUTTON(1)		LOC = "P10"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; 	# down		pin 2 of DB9 Joystick A connector
+NET I_SW(2)			LOC = "P9"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; 	# fire/cred	pin 6 of DB9 Joystick A connector
+NET I_BUTTON(0)		LOC = "P5"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; 	# up			pin 1 of DB9 Joystick A connector
+NET O_VIDEO_R(3)	LOC = "P4"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST;
+NET O_VIDEO_R(2)	LOC = "P3"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST; 
+NET O_VIDEO_R(1)	LOC = "P2"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST; 
+NET O_VIDEO_R(0)	LOC = "P98"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST; 
+NET O_HSYNC			LOC = "P95"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST;
+NET O_VSYNC			LOC = "P94"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST;
+#NET PS2CLKA		LOC = "P92"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; #PS/2 A
+#NET PS2DATA		LOC = "P91"	| IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP; #PS/2 A

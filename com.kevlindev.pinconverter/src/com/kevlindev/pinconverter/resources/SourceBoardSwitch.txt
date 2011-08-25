@@ -1,0 +1,1 @@
+The source board switch specifies the name of the board that is to be the source of a given operation. Typically, the source needs to be specified when transforming a UCF file for one board type to another type.

@@ -1,0 +1,1 @@
+The help switch can be used to get more information about a given switch. Use --help followed by the switch name to get more information on that switch. The leading hyphens are not required when specifying the switch name.

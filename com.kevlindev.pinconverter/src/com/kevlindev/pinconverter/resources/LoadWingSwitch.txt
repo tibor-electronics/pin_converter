@@ -1,0 +1,1 @@
+The load wing switch is used to load a board definition file into the wing registry. This is used to load custom wings that are not part of the default wing list included with pin_converter.

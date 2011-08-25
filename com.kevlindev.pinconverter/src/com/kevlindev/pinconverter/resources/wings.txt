@@ -1,0 +1,83 @@
+"Audio Wing", Audio {
+	A:A1P,A1SEN,A1M,,,A2P,A2SEN,A2M
+}
+
+"Button/LED Wing", "B/LED", BLED {
+	A:LED4,PB4,LED3,PB3,LED2,PB2,LED1,PB1
+}
+
+"Keyboard/Mouse Wing", "PS/2", PS2 {
+	A:CLK1,DATA1,CLK2,DATA2
+}
+
+"Infrared Wing", Infrared {
+	A:SD3,RX3,TX2,,RX2,,,TX1
+}
+
+"MicroSD Wing", MicroSD, SD {
+	A:DAT1,DO,CLK,DI,CS,DAT2
+}
+
+"VGA Wing", VGA {
+	A:VSYNC,HSYNC,BLUE,,,,GREEN,RED
+}
+
+"VGA Wing 2", VGA2 {
+	A:VSYNC,HSYNC,BLUE1,BLUE2,GREEN2,RED2,GREEN1,RED1
+}
+
+"1-Axis Stepper Motor Control Wing", Stepper {
+	A:HOME,DIRECTION,MS2,MS1,RESET,STEP,ENABLE,SLEEP
+}
+
+"Arcade MegaWing", Arcade {
+	A { IOSTANDARD = LVTTL } :
+		I_JOYSTICKA(7)	{ DRIVE = 8, SLEW = FAST, PULLUP },
+		I_JOYSTICKA(3)	{ DRIVE = 8, SLEW = FAST, PULLUP },
+		I_JOYSTICKA(8)	{ DRIVE = 8, SLEW = FAST, PULLUP },
+		I_JOYSTICKA(4)	{ DRIVE = 8, SLEW = FAST, PULLUP },
+		LED(3),
+		LED(2),
+		LED(1),
+		LED(0),
+		,,,
+		I_RESET			{ PULLDOWN },
+		PS2DATB			{ DRIVE = 8, SLEW = FAST, PULLUP },
+		PS2CLKB			{ DRIVE = 8, SLEW = FAST, PULLUP },
+		O_AUDIO_L		{ DRIVE = 8, SLEW = FAST },
+		O_AUDIO_R		{ DRIVE = 8, SLEW = FAST }
+	B { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST } :
+		O_VIDEO_B(0),
+		O_VIDEO_B(1),
+		O_VIDEO_B(2),
+		O_VIDEO_B(3),
+		O_VIDEO_G(0),
+		O_VIDEO_G(1),
+		O_VIDEO_G(2),
+		O_VIDEO_G(3),
+		I_SW(0),
+		I_SW(2),
+		I_SW(1),
+		I_SW(3),
+		I_JOYSTICKA(0)	{ PULLUP },
+		I_JOYSTICKA(5)	{ PULLUP },
+		I_JOYSTICKA(1)	{ PULLUP },
+		I_JOYSTICKA(2)	{ PULLUP }
+	C { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST } :
+		I_JOYSTICKB(4)	{ PULLUP },
+		I_JOYSTICKB(8)	{ PULLUP },
+		I_JOYSTICKB(3)	{ PULLUP },
+		I_JOYSTICKB(7)	{ PULLUP },
+		I_JOYSTICKB(2)	{ PULLUP },
+		I_JOYSTICKB(1)	{ PULLUP },
+		I_JOYSTICKB(5)	{ PULLUP },
+		I_JOYSTICKB(0)	{ PULLUP },
+		O_VIDEO_R(3),
+		O_VIDEO_R(2),
+		O_VIDEO_R(1),
+		O_VIDEO_R(0),
+		O_HSYNC,
+		O_VSYNC,
+		PS2CLKA			{ PULLUP },
+		PS2DATA			{ PULLUP }
+}

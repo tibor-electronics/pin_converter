@@ -1,0 +1,1 @@
+The validate switch is used to verify that all FPGA pin references in an input UCF file's LOC assignments are valid pins according to the specified source board.
