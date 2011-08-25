@@ -215,21 +215,37 @@ public class Table {
 	}
 
 	/**
-	 * Set width of table, reducing the size of the last column as necessary. If
-	 * the last column size will not go below minColumnWidth
+	 * Set width of table, reducing the size of the last column as necessary.
+	 * The last column size will not go below minColumnWidth
 	 * 
 	 * @param width
 	 * @param minColumnWidth
 	 */
 	public void setWidth(int width, int minColumnWidth) {
-		int columnWidth = width;
+	}
+
+	/**
+	 * Set width of table, reducing the size of the specified column as
+	 * necessary. The column size will not go below minColumnWidth
+	 * 
+	 * @param width
+	 * @param minColumnWidth
+	 * @param column
+	 */
+	public void setWidth(int width, int minColumnWidth, int column) {
 		List<Integer> columnWidths = this.getColumnWidths();
 
-		for (int i = 0; i < columnWidths.size() - 1; i++) {
-			columnWidth -= (columnWidths.get(i) + this.getPadding());
-		}
+		if (0 <= column && column < columnWidths.size()) {
+			int columnWidth = width;
 
-		this.setColumnWidth(columnWidths.size() - 1, Math.max(columnWidth, minColumnWidth));
+			for (int i = 0; i < columnWidths.size(); i++) {
+				if (i != column) {
+					columnWidth -= (columnWidths.get(i) + this.getPadding());
+				}
+			}
+
+			this.setColumnWidth(column, Math.max(columnWidth, minColumnWidth));
+		}
 	}
 
 	/**
