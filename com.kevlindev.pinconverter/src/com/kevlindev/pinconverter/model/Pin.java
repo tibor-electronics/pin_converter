@@ -397,7 +397,7 @@ public class Pin {
 
 			column4 = "# " + getCanonicalName();
 
-			table.addRow(new TableRow(column1, column2, column3, column4));
+			table.addRow(column1, column2, column3, column4);
 		}
 	}
 }
