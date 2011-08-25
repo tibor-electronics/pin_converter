@@ -1,3 +1,21 @@
+# begin token definitions
+
+WHITESPACE = /\s+/;
+COMMENT = /#[^\r\n]*$/;
+EOL = /\r|\n|\r\n/;
+IDENTIFIER = /[-_a-zA-Z][-_a-zA-Z0-9]*(?:\([0-9]+\))?/;
+NUMBER = /[0-9]+(?:\.[0-9]+)?(?:ns\b)?/;
+HEADER = "@header";
+CONFIG = "@config";
+COMMA = ",";
+COLON = ":";
+EQUAL = "=";
+STRING = /"[^"\r\n]*"/;
+MULTILINE_STRING = /<<.*?>>/;
+LCURLY = "{";
+RCURLY = "}";
+
+# begin grammar
 Program
 	:	BoardDefinitions
 	;
