@@ -10,6 +10,7 @@ import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 import java.util.regex.Matcher;
@@ -437,21 +438,32 @@ public class Board implements Iterable<Bus> {
 
 		if (busIndex != -1) {
 			for (Bus wingBus : wing) {
-				Bus bus = getBus(busIndex);
+				if (wingBus.getPinCount() > 1) {
+					Bus bus = getBus(busIndex);
 
-				if (0 <= startingIndex && startingIndex + wingBus.getPinCount() <= bus.getPinCount()) {
-					for (int i = 0; i < wingBus.getPinCount(); i++) {
-						Pin pin = bus.getPin(startingIndex + i);
-						Pin wingPin = new Pin(wingBus.getPin(i));
+					if (0 <= startingIndex && startingIndex + wingBus.getPinCount() <= bus.getPinCount()) {
+						for (int i = 0; i < wingBus.getPinCount(); i++) {
+							Pin pin = bus.getPin(startingIndex + i);
+							Pin wingPin = new Pin(wingBus.getPin(i));
 
-						wingPin.setNextPin(pin);
-						bus.setPin(startingIndex + i, wingPin);
+							wingPin.setNextPin(pin);
+							bus.setPin(startingIndex + i, wingPin);
+						}
 					}
-				}
 
-				// reset startingIndex for any remaining buses on the wing
-				startingIndex = 0;
-				busIndex++;
+					// reset startingIndex for any remaining buses on the wing
+					startingIndex = 0;
+					busIndex++;
+				} else {
+					Bus bus = getBus(wingBus.getName());
+					Pin pin = new Pin(bus.getPin(0));
+					Pin wingPin = wingBus.getPin(0);
+
+					Map<String, String> additions = pin.getAdditions();
+					additions.putAll(wingPin.getAdditions());
+					pin.setAdditions(additions);
+					bus.setPin(0, pin);
+				}
 			}
 		}
 	}
