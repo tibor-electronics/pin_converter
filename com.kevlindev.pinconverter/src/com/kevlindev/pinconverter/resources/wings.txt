@@ -31,6 +31,7 @@
 }
 
 "Arcade MegaWing", Arcade {
+	CLK : CLK { IOSTANDARD = LVTTL }
 	A { IOSTANDARD = LVTTL } :
 		I_JOYSTICKA(7)	{ DRIVE = 8, SLEW = FAST, PULLUP },
 		I_JOYSTICKA(3)	{ DRIVE = 8, SLEW = FAST, PULLUP },
