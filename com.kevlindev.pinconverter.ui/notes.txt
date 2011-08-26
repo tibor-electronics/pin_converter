@@ -1,0 +1,17 @@
+This is a document to collect some initial thoughts on what the PinConverter UI should offer.
+
+-Concept of project file
+ -Holds possibly one or more boards with zero or more wings placed on them
+ -Holds a collection of imported/created boards and wings, beyond the provided defaults
+-Open/Close/Save/Save As... project file
+-Import/Export board definition file
+-Import/Export wing definition file
+-Create new board/wing
+-Edit board/wing, pins, and constraints
+-View/Export UCF file for board
+-Set UCF options, possibly during export, or as properties of a board itself
+-Colorized view of generated UCF
+
+-Possible TreeView of boards with their bus children and pin grandchildren
+-Select node, pane on right shows properties of node
+-Pane may be tabbed view: Board, Wing, Bus, Pin. Then when a node is selected, that tab is automatically brought to front 
