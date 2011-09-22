@@ -82,3 +82,54 @@
 		PS2CLKA			{ PULLUP },
 		PS2DATA			{ PULLUP }
 }
+
+"Arcade Pacman MegaWing", "Arcade Pacman", ArcadePacman, Pacman {
+	CLK : OSC_IN { IOSTANDARD = LVTTL }
+	RX  : { IOSTANDARD = LVTTL }
+	TX  : { IOSTANDARD = LVTTL }
+	A { IOSTANDARD = LVTTL } :
+		,
+		,
+		,
+		,
+		,
+		,
+		,
+		,
+		,
+		,
+		,
+		I_RESET,
+		,
+		,
+		O_AUDIO_L		{ DRIVE = 8, SLEW = FAST },
+		O_AUDIO_R		{ DRIVE = 8, SLEW = FAST }
+	B { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST } :
+		O_VIDEO_B(0),
+		O_VIDEO_B(1),
+		O_VIDEO_B(2),
+		O_VIDEO_B(3),
+		O_VIDEO_G(0),
+		O_VIDEO_G(1),
+		O_VIDEO_G(2),
+		O_VIDEO_G(3),
+		I_SW(0),
+		I_SW(1),
+		I_SW(2),
+		I_SW(3)
+	C { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST } :
+		,
+		,
+		O_VSYNC,
+		O_HSYNC,
+		O_VIDEO_R(0),
+		O_VIDEO_R(1),
+		O_VIDEO_R(2),
+		O_VIDEO_R(3),
+		I_JOYSTICK(0)	{ PULLUP },
+		,
+		I_JOYSTICK(1)	{ PULLUP },
+		I_JOYSTICK(2)	{ PULLUP },
+		JOYSTICK_GND,
+		I_JOYSTICK(3)	{ PULLUP }
+}
