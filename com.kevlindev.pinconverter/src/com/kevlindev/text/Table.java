@@ -222,6 +222,7 @@ public class Table {
 	 * @param minColumnWidth
 	 */
 	public void setWidth(int width, int minColumnWidth) {
+		setWidth(width, minColumnWidth, getColumnWidths().size() - 1);
 	}
 
 	/**
