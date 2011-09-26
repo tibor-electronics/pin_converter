@@ -12,7 +12,6 @@ import java.util.Map;
 import java.util.Set;
 
 import com.kevlindev.text.Table;
-import com.kevlindev.text.TableRow;
 import com.kevlindev.utils.ObjectUtils;
 import com.kevlindev.utils.StringUtils;
 
