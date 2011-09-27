@@ -30,6 +30,129 @@
 	A:HOME,DIRECTION,MS2,MS1,RESET,STEP,ENABLE,SLEEP
 }
 
+"Logic Analyzer", LA {
+	CLK : xtalClock
+	B { IOSTANDARD = LVTTL, PULLUP } :
+		input(0),
+		input(1),
+		input(2),
+		input(3),
+		input(4),
+		input(5),
+		input(6),
+		input(7),
+		input(8),
+		input(9),
+		input(10),
+		input(11),
+		input(12),
+		input(13),
+		input(14),
+		input(15)
+	A { IOSTANDARD = LVTTL, PULLUP } :
+		input(16),
+		input(17),
+		input(18),
+		input(19),
+		input(20),
+		input(21),
+		input(22),
+		input(23),
+		input(24),
+		input(25),
+		input(26),
+		input(27),
+		input(28),
+		input(29),
+		input(30),
+		input(31)
+}
+
+"Logic Analyzer Low", LALow {
+	CLK : xtalClock
+	A { IOSTANDARD = LVTTL, PULLUP } :
+		input(0),
+		input(1),
+		input(2),
+		input(3),
+		input(4),
+		input(5),
+		input(6),
+		input(7),
+		input(8),
+		input(9),
+		input(10),
+		input(11),
+		input(12),
+		input(13),
+		input(14),
+		input(15)
+}
+
+"Logic Analyzer High", LAHigh {
+	CLK : xtalClock
+	A { IOSTANDARD = LVTTL, PULLUP } :
+		input(16),
+		input(17),
+		input(18),
+		input(19),
+		input(20),
+		input(21),
+		input(22),
+		input(23),
+		input(24),
+		input(25),
+		input(26),
+		input(27),
+		input(28),
+		input(29),
+		input(30),
+		input(31)
+}
+
+"SRAM" {
+	ADDR { IOSTANDARD = LVTTL } :
+		ADDR(0),
+		ADDR(1),
+		ADDR(2),
+		ADDR(3),
+		ADDR(4),
+		ADDR(5),
+		ADDR(6),
+		ADDR(7),
+		ADDR(8),
+		ADDR(9),
+		ADDR(10),
+		ADDR(11),
+		ADDR(12),
+		ADDR(13),
+		ADDR(14),
+		ADDR(15),
+		ADDR(16),
+		ADDR(17),
+		ADDR(18),
+		DATA(0),
+		DATA(1),
+		DATA(2),
+		DATA(3),
+		DATA(4),
+		DATA(5),
+		DATA(6),
+		DATA(7),
+		DATA(8),
+		DATA(9),
+		DATA(10),
+		DATA(11),
+		DATA(12),
+		DATA(13),
+		DATA(14),
+		DATA(15),
+		CE,
+		WE,
+		OE,
+		BE
+}
+
 "Arcade MegaWing", Arcade {
 	CLK : CLK { IOSTANDARD = LVTTL }
 	A { IOSTANDARD = LVTTL } :
