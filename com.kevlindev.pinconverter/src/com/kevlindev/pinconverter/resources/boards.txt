@@ -105,6 +105,51 @@
 	FLASH_SO : P65  { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST, PULLUP }
 }
 
+# This is a Papilio with Spartan 6 and SRAM that uses Arduino Mega footprint
+"Papilio Logic", PLogic {
+	@header<<
+		## Prohibit the automatic placement of pins that are connected to VCC or GND for configuration.
+	>>
+	@config {
+		PROHIBIT = P144,	# HSWAP
+		PROHIBIT = P69,		# M0
+		PROHIBIT = P60		# M1
+	}
+	CLK : P94  { IOSTANDARD = LVTTL, PERIOD = 31.25ns }
+	RX  : P116 { IOSTANDARD = LVTTL }
+	TX  : P117 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	ADC_CS_N : P26  { IOSTANDARD = LVTTL }
+
+	# A is Arduino pins 0-13, TODO: RX and TX are repeated, how best to deal with this?
+	A { IOSTANDARD = LVTTL } : P116, P117, P118, P119, P120, P121, P123, P124, P126, P127, P131, P132, P133, P134
+
+	# B is Arduino pins 14-21
+	B { IOSTANDARD = LVTTL } : P115, P114, P112, P111, P105, P102, P101, P100
+
+	# C is W3 and W4 or Arduino pins 22-52 even
+	C { IOSTANDARD = LVTTL } : P99, P97, P93, P88, P85, P83, P81, P79, P75, P67, P62, P59, P57, P55, P50, P47
+
+	# D is W5 and W6 or Arduino pins 22-52 odd
+	D { IOSTANDARD = LVTTL } : P98, P95, P92, P87, P84, P82, P80, P78, P74, P66, P61, P58, P56, P51, P48, P39
+
+	# SRAM
+	SRAM :
+		# ADDR(0..18). NOTE: 18 is not connected
+		P6, P7, P9, P10, P11, P141, P140, P139, P138, P137, P46, P45, P44, P43, P41, P29, P30, P32, ,
+		# DATA(0..15)
+		P14, P15, P16, P17, P5, P2, P1, P143, P40, P35, P34, P33, P21, P22, P23, P24,
+		# CE, WE, OE, BE
+		P12, P142, P27, P26
+	JTAG_TMS : P107 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	JTAG_TCK : P109 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	JTAG_TDI : P110 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	JTAG_TDO : P106 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	FLASH_CS : P38  { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	FLASH_CK : P70  { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	FLASH_SI : P64  { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	FLASH_SO : P65  { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST, PULLUP }
+}
+
 # This is a prototype board called the Papilio RAM
 "Papilio RAM", "P/RAM", PRAM {
 	@header<<
