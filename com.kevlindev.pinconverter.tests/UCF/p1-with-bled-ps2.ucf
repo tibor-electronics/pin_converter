@@ -30,20 +30,20 @@ CONFIG PROHIBIT=P49;
 CONFIG PROHIBIT=P48;
 CONFIG PROHIBIT=P47;
 
-NET CLK   LOC="P89" | IOSTANDARD=LVCMOS25 | PERIOD=31.25ns; # CLK
-NET LED4  LOC="P18"                                         # A0
-NET PB4   LOC="P23"                                         # A1
-NET LED3  LOC="P26"                                         # A2
-NET PB3   LOC="P33"                                         # A3
-NET LED2  LOC="P35"                                         # A4
-NET PB2   LOC="P40"                                         # A5
-NET LED1  LOC="P53"                                         # A6
-NET PB1   LOC="P57"                                         # A7
-NET CLK1  LOC="P58"                                         # B8
-NET DATA1 LOC="P54"                                         # B9
-NET CLK2  LOC="P41"                                         # B10
-NET DATA2 LOC="P36"                                         # B11
-NET B(12) LOC="P34" | IOSTANDARD=LVCMOS33;                  # B12
-NET B(13) LOC="P32" | IOSTANDARD=LVCMOS33;                  # B13
-NET B(14) LOC="P25" | IOSTANDARD=LVCMOS33;                  # B14
-NET B(15) LOC="P22" | IOSTANDARD=LVCMOS33;                  # B15
+NET CLK   LOC="P89"  | IOSTANDARD=LVCMOS25 | PERIOD=31.25ns; # CLK
+NET LED4  LOC="P18";                                         # A0
+NET PB4   LOC="P23";                                         # A1
+NET LED3  LOC="P26";                                         # A2
+NET PB3   LOC="P33";                                         # A3
+NET LED2  LOC="P35";                                         # A4
+NET PB2   LOC="P40";                                         # A5
+NET LED1  LOC="P53";                                         # A6
+NET PB1   LOC="P57";                                         # A7
+NET CLK1  LOC="P58";                                         # B8
+NET DATA1 LOC="P54";                                         # B9
+NET CLK2  LOC="P41";                                         # B10
+NET DATA2 LOC="P36";                                         # B11
+NET B(12) LOC="P34"  | IOSTANDARD=LVCMOS33;                  # B12
+NET B(13) LOC="P32"  | IOSTANDARD=LVCMOS33;                  # B13
+NET B(14) LOC="P25"  | IOSTANDARD=LVCMOS33;                  # B14
+NET B(15) LOC="P22"  | IOSTANDARD=LVCMOS33;                  # B15

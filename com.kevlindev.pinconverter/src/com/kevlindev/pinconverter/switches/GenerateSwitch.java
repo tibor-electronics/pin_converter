@@ -152,8 +152,14 @@ public class GenerateSwitch extends AbstractSwitch {
 						if (board.containsBusName(busText) && bus.getPinCount() == 1) {
 							result.add(busText);
 						} else {
-							String range = "[0:" + (bus.getPinCount() - 1) + "]";
-							BusIterator busNames = BusIterator.getBus(busText + range);
+							BusIterator busNames;
+
+							if (bus != null) {
+								String range = "[0:" + (bus.getPinCount() - 1) + "]";
+								busNames = BusIterator.getBus(busText + range);
+							} else {
+								busNames = BusIterator.getBus(busText);
+							}
 
 							// add wing name to pass filtering in
 							// Bus#toUCF(Set<String>)

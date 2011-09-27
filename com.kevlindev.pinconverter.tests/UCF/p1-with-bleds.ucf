@@ -30,20 +30,20 @@ CONFIG PROHIBIT=P49;
 CONFIG PROHIBIT=P48;
 CONFIG PROHIBIT=P47;
 
-NET CLK  LOC="P89" | IOSTANDARD=LVCMOS25 | PERIOD=31.25ns; # CLK
-NET LED4 LOC="P18"                                         # A0
-NET PB4  LOC="P23"                                         # A1
-NET LED3 LOC="P26"                                         # A2
-NET PB3  LOC="P33"                                         # A3
-NET LED2 LOC="P35"                                         # A4
-NET PB2  LOC="P40"                                         # A5
-NET LED1 LOC="P53"                                         # A6
-NET PB1  LOC="P57"                                         # A7
-NET LED4 LOC="P60"                                         # A8
-NET PB4  LOC="P62"                                         # A9
-NET LED3 LOC="P65"                                         # A10
-NET PB3  LOC="P67"                                         # A11
-NET LED2 LOC="P70"                                         # A12
-NET PB2  LOC="P79"                                         # A13
-NET LED1 LOC="P84"                                         # A14
-NET PB1  LOC="P86"                                         # A15
+NET CLK  LOC="P89"  | IOSTANDARD=LVCMOS25 | PERIOD=31.25ns; # CLK
+NET LED4 LOC="P18";                                         # A0
+NET PB4  LOC="P23";                                         # A1
+NET LED3 LOC="P26";                                         # A2
+NET PB3  LOC="P33";                                         # A3
+NET LED2 LOC="P35";                                         # A4
+NET PB2  LOC="P40";                                         # A5
+NET LED1 LOC="P53";                                         # A6
+NET PB1  LOC="P57";                                         # A7
+NET LED4 LOC="P60";                                         # A8
+NET PB4  LOC="P62";                                         # A9
+NET LED3 LOC="P65";                                         # A10
+NET PB3  LOC="P67";                                         # A11
+NET LED2 LOC="P70";                                         # A12
+NET PB2  LOC="P79";                                         # A13
+NET LED1 LOC="P84";                                         # A14
+NET PB1  LOC="P86";                                         # A15

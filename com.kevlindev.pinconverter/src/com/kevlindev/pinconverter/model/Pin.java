@@ -393,7 +393,7 @@ public class Pin {
 			if (hasAdditions()) {
 				column3 = "| " + getAdditionsString(" | ", configuration) + ";";
 			} else {
-				column3 = ";";
+				column2 += ";";
 			}
 
 			column4 = "# " + getCanonicalName();
