@@ -374,11 +374,13 @@ public class Pin {
 		String headerName = (owningBus.getOwningBoard().isWing()) ? getName() : boardBus.getUCFName(this);
 		String name = (owningBus.getOwningBoard().isWing()) ? boardPin.getName() : getName();
 
-		if (headerName != null && headerName.length() != 0) {
-			column1 = String.format("NET %s", headerName);
-		} else {
-			if (!configuration.contains(Configuration.EXCLUDE_UNUSED_PINS)) {
-				column1 = String.format("#NET %s", getCanonicalName());
+		if (name != null && name.length() > 0) {
+			if (headerName != null && headerName.length() != 0) {
+				column1 = String.format("NET %s", headerName);
+			} else {
+				if (!configuration.contains(Configuration.EXCLUDE_UNUSED_PINS)) {
+					column1 = String.format("#NET %s", getCanonicalName());
+				}
 			}
 		}
 
