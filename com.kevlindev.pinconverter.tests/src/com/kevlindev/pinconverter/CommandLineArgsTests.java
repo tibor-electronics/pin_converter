@@ -426,4 +426,22 @@ public class CommandLineArgsTests {
 		);
 		// @formatter:on
 	}
+
+	@Test
+	public void testNonStandardBusSize() {
+		// @formatter:off
+		assertOutput(
+			new String[] {
+				"--destinationBoard",
+				"Papilio Logic",
+				"--placeWing",
+				"LAHigh->C;LALow->D;SRAM->SRAM",
+				"--excludeUnused",
+				"--generate",
+				"C,D,CLK,RX,TX,ADC_CS_N,SRAM"
+			},
+			"UCF/plogic-la-sram.ucf"
+		);
+		// @formatter:on
+	}
 }
