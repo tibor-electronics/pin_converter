@@ -18,6 +18,7 @@ import com.kevlindev.pinconverter.ExecutionContext;
 import com.kevlindev.pinconverter.Registrar;
 import com.kevlindev.pinconverter.commands.ICommand;
 import com.kevlindev.pinconverter.model.Board;
+import com.kevlindev.pinconverter.model.Bus;
 import com.kevlindev.pinconverter.model.BusIterator;
 import com.kevlindev.pinconverter.model.Configuration;
 import com.kevlindev.pinconverter.model.UCF;
@@ -146,17 +147,20 @@ public class GenerateSwitch extends AbstractSwitch {
 					result = new CaselessSet(new LinkedHashSet<CaselessString>());
 
 					for (String busText : buses) {
-						if (board.containsBusName(busText) && board.getBus(busText).getPinCount() == 1) {
+						Bus bus = board.getBus(busText);
+
+						if (board.containsBusName(busText) && bus.getPinCount() == 1) {
 							result.add(busText);
 						} else {
-							BusIterator bus = BusIterator.getBus(busText);
+							String range = "[0:" + (bus.getPinCount() - 1) + "]";
+							BusIterator busNames = BusIterator.getBus(busText + range);
 
 							// add wing name to pass filtering in
 							// Bus#toUCF(Set<String>)
-							result.add(bus.getName());
+							result.add(busNames.getName());
 
-							while (bus.hasNext()) {
-								result.add(bus.next());
+							while (busNames.hasNext()) {
+								result.add(busNames.next());
 							}
 						}
 					}
