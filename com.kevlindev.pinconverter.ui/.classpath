@@ -5,5 +5,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.swt"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/com.kevlindev.pinconverter"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.jface"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/com.kevlindev.utils"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -6,12 +6,7 @@ package com.kevlindev.pinconverter.ui;
 
 import java.io.InputStream;
 
-import org.eclipse.jface.viewers.ContentViewer;
-import org.eclipse.jface.viewers.IBaseLabelProvider;
-import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.TreeViewer;
-import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Display;
@@ -61,47 +56,50 @@ public class TreeViewWindow {
 		shell.setLayout(new GridLayout(1, true));
 
 		loadBoards();
-		Object[] input = new Object[] { Registrar.BOARD_REGISTRY, Registrar.WING_REGISTRY };
+		Object[] input = new Object[] { Registrar.BOARD_REGISTRY,
+				Registrar.WING_REGISTRY };
 
 		TreeViewer treeViewer = new TreeViewer(shell);
 		treeViewer.setContentProvider(new BoardContentProvider());
 		treeViewer.setLabelProvider(new BoardLabelProvider());
 		treeViewer.setInput(input);
 		treeViewer.getTree().setLayoutData(new GridData(GridData.FILL_BOTH));
-//		treeViewer.setSorter(new ViewerSorter() {
-//			@Override
-//			public int compare(Viewer viewer, Object e1, Object e2) {
-//				String name1 = null;
-//				String name2 = null;
-//
-//				if (viewer != null && viewer instanceof ContentViewer) {
-//					IBaseLabelProvider provider = ((ContentViewer) viewer).getLabelProvider();
-//
-//					if (provider instanceof ILabelProvider) {
-//						ILabelProvider labelProvider = (ILabelProvider) provider;
-//
-//						name1 = labelProvider.getText(e1);
-//						name2 = labelProvider.getText(e2);
-//					}
-//				}
-//
-//				if (name1 == null) {
-//					name1 = e1.toString();
-//				}
-//				if (name2 == null) {
-//					name2 = e2.toString();
-//				}
-//
-//				return name1.compareToIgnoreCase(name2);
-//			}
-//		});
+		// treeViewer.setSorter(new ViewerSorter() {
+		// @Override
+		// public int compare(Viewer viewer, Object e1, Object e2) {
+		// String name1 = null;
+		// String name2 = null;
+		//
+		// if (viewer != null && viewer instanceof ContentViewer) {
+		// IBaseLabelProvider provider = ((ContentViewer)
+		// viewer).getLabelProvider();
+		//
+		// if (provider instanceof ILabelProvider) {
+		// ILabelProvider labelProvider = (ILabelProvider) provider;
+		//
+		// name1 = labelProvider.getText(e1);
+		// name2 = labelProvider.getText(e2);
+		// }
+		// }
+		//
+		// if (name1 == null) {
+		// name1 = e1.toString();
+		// }
+		// if (name2 == null) {
+		// name2 = e2.toString();
+		// }
+		//
+		// return name1.compareToIgnoreCase(name2);
+		// }
+		// });
 	}
 
 	private void loadBoards() {
 		new AbstractLoadCommand(null) {
 			@Override
 			protected InputStream getInputStream() {
-				return PinConverter.class.getResourceAsStream("/com/kevlindev/pinconverter/resources/boards.txt");
+				return PinConverter.class
+						.getResourceAsStream("/com/kevlindev/pinconverter/resources/boards.txt");
 			}
 
 			@Override
@@ -112,7 +110,8 @@ public class TreeViewWindow {
 		new AbstractLoadCommand(null) {
 			@Override
 			protected InputStream getInputStream() {
-				return PinConverter.class.getResourceAsStream("/com/kevlindev/pinconverter/resources/wings.txt");
+				return PinConverter.class
+						.getResourceAsStream("/com/kevlindev/pinconverter/resources/wings.txt");
 			}
 
 			@Override
