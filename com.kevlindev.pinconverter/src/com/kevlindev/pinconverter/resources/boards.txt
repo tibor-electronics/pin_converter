@@ -60,7 +60,7 @@
 }
 
 # This is a Papilio with Spartan 6 and SRAM
-"Papilio LX", PLX {
+"Papilio Plus", PPlus {
 	@header<<
 		# Main board wing pin [] to FPGA pin Pxx map
 		# -------C-------    -------B-------    -------A-------
@@ -80,21 +80,28 @@
 		#       [C13] P132         [B13] P55    P56 [A02] [3V3]
 		#       [C14] P133         [B14] P50    P51 [A01] [2V5]
 		#       [C15] P134         [B15] P47    P48 [A00] [GND]
-
+		
 		## Prohibit the automatic placement of pins that are connected to VCC or GND for configuration.
 	>>
 	@config {
 		PROHIBIT = P144,	# HSWAP
 		PROHIBIT = P69,		# M0
-		PROHIBIT = P60,		# M1
-		PART = XC6SLX9-TQG144-2
+		PROHIBIT = P60		# M1
 	}
-	CLK : P94  { IOSTANDARD = LVCMOS25, PERIOD = 31.25ns }
+	CLK : P94  { IOSTANDARD = LVTTL, PERIOD = 31.25ns }
 	RX  : P101 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
 	TX  : P105 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST, PULLUP }
-	A { IOSTANDARD = LVCMOS33 } :  P48,  P51,  P56,  P58,  P61,  P66,  P67,  P75,  P79,  P81,  P83,  P85,  P88,  P93,  P98, P100
-	B { IOSTANDARD = LVCMOS33 } :  P99,  P97,  P92,  P87,  P84,  P82,  P80,  P78,  P74,  P95,  P62,  P59,  P57,  P55,  P50,  P47
-	C { IOSTANDARD = LVCMOS33 } : P114, P115, P116, P117, P118, P119, P120, P121, P123, P124, P126, P127, P131, P132, P133, P134
+	A { IOSTANDARD = LVTTL } :  P48,  P51,  P56,  P58,  P61,  P66,  P67,  P75,  P79,  P81,  P83,  P85,  P88,  P93,  P98, P100
+	B { IOSTANDARD = LVTTL } :  P99,  P97,  P92,  P87,  P84,  P82,  P80,  P78,  P74,  P95,  P62,  P59,  P57,  P55,  P50,  P47
+	C { IOSTANDARD = LVTTL } : P114, P115, P116, P117, P118, P119, P120, P121, P123, P124, P126, P127, P131, P132, P133, P134
+	# SRAM is ADDR(0..18), DATA(0..15), ce, we, oe, be
+	ADDR { IOSTANDARD = LVTTL } : P7, P6, P8, P9, P10, P141, P140, P139, P138, P137, P46, P45, P44, P43, P41, P29, P30, P32, P40
+	DATA { IOSTANDARD = LVTTL } : P12, P14, P15, P16, P5, P2, P1, P143, P39, P35, P34, P33, P17, P21, P22, P23
+	nCS { IOSTANDARD = LVTTL } : P11
+	nWE { IOSTANDARD = LVTTL } : P142
+	nOE { IOSTANDARD = LVTTL } : P27
+	nBLE { IOSTANDARD = LVTTL } : P24
+	nBHE { IOSTANDARD = LVTTL } : P26
 	JTAG_TMS : P107 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
 	JTAG_TCK : P109 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
 	JTAG_TDI : P110 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
