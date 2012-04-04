@@ -7,7 +7,6 @@ package com.kevlindev.pinconverter.parsing;
 import java.util.EnumSet;
 import java.util.Set;
 
-import com.kevlindev.parsing.Lexeme;
 import com.kevlindev.parsing.Lexer;
 
 /**
@@ -17,11 +16,6 @@ import com.kevlindev.parsing.Lexer;
  * @version 1.0
  */
 public class BoardDefinitionLexer extends Lexer<BoardDefinitionTokenType> {
-	/**
-	 * This is a special token used to indicate the end of file
-	 */
-	private static final Lexeme<BoardDefinitionTokenType> EOF = new Lexeme<BoardDefinitionTokenType>(BoardDefinitionTokenType.EOF, 0, 0, "");
-
 	/**
 	 * This is a set of all tokens this lexer generates
 	 */
@@ -33,14 +27,9 @@ public class BoardDefinitionLexer extends Lexer<BoardDefinitionTokenType> {
 	 */
 	private static final Set<BoardDefinitionTokenType> FILTERED_TOKENS = EnumSet.of(BoardDefinitionTokenType.WHITESPACE, BoardDefinitionTokenType.COMMENT);
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.kevlindev.pinconverter.parsing.Lexer#getEOF()
-	 */
 	@Override
-	protected Lexeme<BoardDefinitionTokenType> getEOF() {
-		return EOF;
+	protected BoardDefinitionTokenType getEOFType() {
+		return BoardDefinitionTokenType.EOF;
 	}
 
 	/*
