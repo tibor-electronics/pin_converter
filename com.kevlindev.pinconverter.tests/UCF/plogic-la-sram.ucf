@@ -61,7 +61,6 @@ NET ADDR(14)  LOC="P41"  | IOSTANDARD=LVTTL;                       # SRAM14
 NET ADDR(15)  LOC="P29"  | IOSTANDARD=LVTTL;                       # SRAM15
 NET ADDR(16)  LOC="P30"  | IOSTANDARD=LVTTL;                       # SRAM16
 NET ADDR(17)  LOC="P32"  | IOSTANDARD=LVTTL;                       # SRAM17
-NET ADDR(18)  LOC="null" | IOSTANDARD=LVTTL;                       # SRAM18
 NET DATA(0)   LOC="P14"  | IOSTANDARD=LVTTL;                       # SRAM19
 NET DATA(1)   LOC="P15"  | IOSTANDARD=LVTTL;                       # SRAM20
 NET DATA(2)   LOC="P16"  | IOSTANDARD=LVTTL;                       # SRAM21
