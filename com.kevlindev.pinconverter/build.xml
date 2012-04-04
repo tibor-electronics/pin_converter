@@ -5,6 +5,8 @@
 	<property name="debuglevel" value="source,lines,vars" />
 	<property name="target" value="1.6" />
 	<property name="source" value="1.6" />
+	<property name="utils" value="../../java-utils/projects/com.kevlindev.utils/src" />
+	<property name="parsing" value="../../trivial-parsing/projects/com.kevlindev.parsing/src" />
 
 	<path id="com.kevlindev.pinconverter.classpath">
 		<pathelement location="bin" />
@@ -14,6 +16,16 @@
 		<mkdir dir="bin" />
 		<copy includeemptydirs="false" todir="bin">
 			<fileset dir="src">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="${utils}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="${parsing}">
 				<exclude name="**/*.java" />
 			</fileset>
 		</copy>
@@ -31,6 +43,8 @@
 		<echo message="${ant.project.name}: ${ant.file}" />
 		<javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
 			<src path="src" />
+			<src path="${utils}" />
+			<src path="${parsing}" />
 			<classpath refid="com.kevlindev.pinconverter.classpath" />
 		</javac>
 	</target>
