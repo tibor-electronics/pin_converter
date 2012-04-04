@@ -66,4 +66,4 @@ Generate Papilio One UCF file, placing multiple B/LED wings
 Generate Papilio One UCF file, placing B/LED and PS/2 wings (2 variations)
 
     pinconv --destinationBoard "Papilio One" --placeWing "B/LED->A;PS/2->BH" --generate CLK,A,BH
-    pinconv -dst "Papilio One" -pw "B/LED->A" -pw PS/2->BH -g CLK,A,BH
+    pinconv -dst "Papilio One" -pw "B/LED->A" -pw "PS/2->BH" -g CLK,A,BH
