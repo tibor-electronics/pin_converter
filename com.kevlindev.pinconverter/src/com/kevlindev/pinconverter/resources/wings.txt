@@ -256,3 +256,59 @@
 		JOYSTICK_GND,
 		I_JOYSTICK(3)	{ PULLUP }
 }
+
+"LogicStart MegaWing 1.2", LogicStart {
+	CLK : CLK { IOSTANDARD = LVTTL }
+	A { IOSTANDARD = LVTTL } :
+		Seg7_AN(3),
+		Seg7_DP,
+		Seg7_AN(2),
+		Seg7_E,
+		Seg7_F,
+		Seg7_C,
+		Seg7_D,
+		Seg7_A,
+		Seg7_AN(1),
+		Seg7_G,
+		Seg7_B,
+		Seg7_AN(0),
+		SPI_CS,
+		SPI_MISO,
+		SPI_MOSI,
+		SPI_SCLK
+	B { IOSTANDARD = LVTTL } :
+		VGA_VSYNC,
+		VGA_HSYNC,
+		VGA_BLUE(0),
+		VGA_BLUE(1),
+		VGA_GREEN(0),
+		VGA_GREEN(1),
+		VGA_GREEN(2),
+		VGA_RED(0),
+		VGA_RED(1),
+		VGA_RED(2),
+		AUDIO,
+		JOY_RIGHT,
+		JOY_LEFT,
+		JOY_DOWN,
+		JOY_UP,
+		JOY_SELECT
+	C { IOSTANDARD = LVTTL } :
+		SWITCH(0),
+		SWITCH(1),
+		SWITCH(2),
+		SWITCH(3),
+		SWITCH(4),
+		SWITCH(5),
+		SWITCH(6),
+		SWITCH(7),
+		LED(0),
+		LED(1),
+		LED(2),
+		LED(3),
+		LED(4),
+		LED(5),
+		LED(6),
+		LED(7)
+}
+
