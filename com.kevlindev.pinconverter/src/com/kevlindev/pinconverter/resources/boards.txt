@@ -59,6 +59,60 @@
 	@config { PART = XC3S500E-VQ100-4 }
 }
 
+# This is a Papilio with Spartan 6 and SDRAM
+"Papilio Pro", PPro {
+	@header<<
+		# Main board wing pin [] to FPGA pin Pxx map
+		# -------C-------    -------B-------    -------A-------
+		# [GND] [C00] P114   [GND] [B00] P99    P100 [A15]
+		# [2V5] [C01] P115   [2V5] [B01] P97    P98 [A14]
+		# [3V3] [C02] P116   [3V3] [B02] P92    P93 [A13]
+		# [5V0] [C03] P117   [5V0] [B03] P87    P88 [A12]
+		#       [C04] P118         [B04] P84    P85 [A11] [5V0]
+		#       [C05] P119         [B05] P82    P83 [A10] [3V3]
+		#       [C06] P120         [B06] P80    P81 [A09] [2V5]
+		#       [C07] P121         [B07] P78    P79 [A08] [GND]
+		# [GND] [C08] P123   [GND] [B08] P74    P75 [A07]
+		# [2V5] [C09] P124   [2V5] [B09] P95    P67 [A06]
+		# [3V3] [C10] P126   [3V3] [B10] P62    P66 [A05]
+		# [5V0] [C11] P127   [5V0] [B11] P59    P61 [A04]
+		#       [C12] P131         [B12] P57    P58 [A03] [5V0]
+		#       [C13] P132         [B13] P55    P56 [A02] [3V3]
+		#       [C14] P133         [B14] P50    P51 [A01] [2V5]
+		#       [C15] P134         [B15] P47    P48 [A00] [GND]
+		
+		## Prohibit the automatic placement of pins that are connected to VCC or GND for configuration.
+	>>
+	@config {
+		PROHIBIT = P144,	# HSWAP
+		PROHIBIT = P69,		# M0
+		PROHIBIT = P60		# M1
+	}
+	CLK : P94  { IOSTANDARD = LVTTL, PERIOD = 31.25ns }
+	RX  : P101 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	TX  : P105 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST, PULLUP }
+	A { IOSTANDARD = LVTTL } :  P48,  P51,  P56,  P58,  P61,  P66,  P67,  P75,  P79,  P81,  P83,  P85,  P88,  P93,  P98, P100
+	B { IOSTANDARD = LVTTL } :  P99,  P97,  P92,  P87,  P84,  P82,  P80,  P78,  P74,  P95,  P62,  P59,  P57,  P55,  P50,  P47
+	C { IOSTANDARD = LVTTL } : P114, P115, P116, P117, P118, P119, P120, P121, P123, P124, P126, P127, P131, P132, P133, P134
+	# SDRAM is ADDR(0..13), DATA(0..15), dqml, dqmh, ba(0..1), we, cas, ras
+	ADDR { IOSTANDARD = LVTTL } : P140, P139, P138, P137, P46, P45, P44, P43, P41, P40, P141, P35, P34
+	DATA { IOSTANDARD = LVTTL } : P9, P10, P11, P12, P14, P15, P16, P8, P21, P22, P23, P24, P26, P27, P29, P30
+	DQML { IOSTANDARD = LVTTL } : P7
+	DQMH { IOSTANDARD = LVTTL } : P17
+	BA	 { IOSTANDARD = LVTTL } : P143, P142
+	nWE { IOSTANDARD = LVTTL } : P6
+	nCAS { IOSTANDARD = LVTTL } : P5
+	nRAS { IOSTANDARD = LVTTL } : P2
+	JTAG_TMS : P107 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	JTAG_TCK : P109 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	JTAG_TDI : P110 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	JTAG_TDO : P106 { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	FLASH_CS : P38  { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	FLASH_CK : P70  { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	FLASH_SI : P64  { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST }
+	FLASH_SO : P65  { IOSTANDARD = LVTTL, DRIVE = 8, SLEW = FAST, PULLUP }
+}
+
 # This is a Papilio with Spartan 6 and SRAM
 "Papilio Plus", PPlus {
 	@header<<
